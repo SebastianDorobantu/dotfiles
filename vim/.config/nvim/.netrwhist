@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =6
+let g:netrw_dirhist_6='/home/seba/.config/nvim'
+let g:netrw_dirhist_5='/home/seba/.config'
+let g:netrw_dirhist_4='/home/seba'
+let g:netrw_dirhist_3='/home/seba/.config/qtile'
+let g:netrw_dirhist_2='/home/seba/.config'
+let g:netrw_dirhist_1='/home/seba'
+let g:netrw_dirhist_0='/home/seba/.config/zsh'
+let g:netrw_dirhist_9='/home/seba/.config'
+let g:netrw_dirhist_8='/home/seba/.config/ohmyzsh'
+let g:netrw_dirhist_7='/home/seba/.config/ohmyzsh/.github'
