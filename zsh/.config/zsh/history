@@ -24,3 +24,8 @@
 : 1623184225:0;git status
 : 1623184275:0;git add .gitignore
 : 1623184282:0;git add .
+: 1623184295:0;git commit -m 'gitignore'
+: 1623184298:0;push
+: 1623184303:0;git status
+: 1623184471:0;nvim .gitignore
+: 1623184517:0;git commit -am 'asa?'
