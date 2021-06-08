@@ -7,3 +7,10 @@
 : 1623183974:0;ls
 : 1623183978:0;git status
 : 1623184000:0;git add zsh/.config/zsh/history
+: 1623184002:0;git status
+: 1623184023:0;git commit -m 'fuck ohmyzsh hist'
+: 1623184027:0;git push
+: 1623184033:0;ls
+: 1623184038:0;git status
+: 1623184048:0;git commit -a
+: 1623184062:0;git commit -a -m 'bro'
