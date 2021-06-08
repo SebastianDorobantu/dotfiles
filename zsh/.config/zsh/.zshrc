@@ -89,7 +89,13 @@ export DROPBOX='/home/seba/Dropbox'
 #nvim as manpager####
 export MANPAGER="nvim -c 'set ft=man' -"
 
+#Fuck ohmyzsh hist settings
 setopt HIST_IGNORE_DUPS
+setopt INC_APPEND_HISTORY
+setopt EXTENDED_HISTORY
+export SAVEHIST=500000
+export HISTSIZE=2000
+export HISTFILE="$HOME/.config/zsh/history"
 
 ####KEYBINDS#########################
 

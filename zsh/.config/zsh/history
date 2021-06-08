@@ -1,0 +1,9 @@
+: 1623183956:0;cd Project/conf/dotfiles/
+: 1623183958:0;ls
+: 1623183963:0;git add -a 
+: 1623183967:0;git add a 
+: 1623183969:0;git add 
+: 1623183973:0;git add .
+: 1623183974:0;ls
+: 1623183978:0;git status
+: 1623184000:0;git add zsh/.config/zsh/history
