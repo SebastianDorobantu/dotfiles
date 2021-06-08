@@ -14,3 +14,13 @@
 : 1623184038:0;git status
 : 1623184048:0;git commit -a
 : 1623184062:0;git commit -a -m 'bro'
+: 1623184065:0;git status
+: 1623184073:0;git push
+: 1623184081:0;git status
+: 1623184097:0;git add .
+: 1623184100:0;git status
+: 1623184201:0;nvim .gitignore
+: 1623184222:0;cd Project/conf/dotfiles
+: 1623184225:0;git status
+: 1623184275:0;git add .gitignore
+: 1623184282:0;git add .
