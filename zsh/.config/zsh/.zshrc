@@ -70,8 +70,6 @@ plugins=(
     git
     python
     alias-tips
-    zsh-completions
-    zsh-autosuggestions
     )
 
 fpath+=${ZDOTDIR:-~}/.zsh_functions
@@ -86,7 +84,7 @@ export LANG=en_US.UTF-8
 export EDITOR='nvim'
 export HISTCONTROL='erasedups'
 export HISTORY_IGNORE='ls*:cd*:top:ranger'
-export DROPBOX='/home/seba/.dropbox/Files/Dropbox'
+export DROPBOX='/home/seba/Dropbox'
 
 #nvim as manpager####
 export MANPAGER="nvim -c 'set ft=man' -"
@@ -152,17 +150,20 @@ alias cat='bat'
 alias rr='curl -s -L https://raw.githubusercontent.com/keroserene/rickrollrc/master/roll.sh | bash'
 
 # Power
+alias hibernate='systemctl hibernate'
 alias shutdown='systemctl poweroff'
 alias poweroff='systemctl poweroff'
-alias down='systemctl poweroff'
-alias reboot='systemctl reboot'
 alias restart='systemctl reboot'
+alias reboot='systemctl reboot'
+alias down='systemctl poweroff'
+alias sleep='systemctl sleep'
 alias :Q="exit"
 alias :q="exit"
 
 # Pacman
-alias yoink='sudo pacman -S'
 alias yeet='sudo pacman -Rn'
+alias yoink='sudo pacman -S'
+alias zoinks='sudo pacman -Syyyu'
 alias unlock='sudo rm /var/lib/pacman/db.lck'    # remove pacman lock
 
 # Shortcuts
