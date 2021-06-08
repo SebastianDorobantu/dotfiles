@@ -116,7 +116,7 @@ bindkey '^R' history-incremental-search-backward
 alias ls='lsd'
 alias ll='ls -l'
 alias la='ls -la'
-alias lt='ls --tree'
+alias lt='ls --tree --depth'
 alias l.='ls -la |egrep "^\."'
 
 # Navigation
