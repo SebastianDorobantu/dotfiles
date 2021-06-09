@@ -143,7 +143,7 @@ alias psmem='ps auxf | sort -nr -k 4'
 alias pscpu='ps auxf | sort -nr -k 3'
 
 # Programs
-alias vim='nvim'
+alias vim='sudo nvim'
 alias matrix='cmatrix'
 alias top='htop'
 alias grep='grep --color=auto'
