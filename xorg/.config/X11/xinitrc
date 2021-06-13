@@ -45,6 +45,5 @@ nitrogen --restore &
 picom &
 exec qtile
 #sleep 2
-#xrandr --output DP-2 --mode 1360x768 --pos 0x0 --output HDMI-0 --mode 1920x1080 --pos 1390x0
-#xrandr --output HDMI-1 --same-as HDMI-0
 
+xrandr --output DVI-D-0 --off --output HDMI-0 --mode 1920x1080 --pos 768x140 --rotate normal --output HDMI-1 --auto --same-as HDMI-0 --output DP-0 --off --output DP-1 --off --output DP-2 --mode 1360x768 --pos 0x0 --rotate right --output DP-3 --off
