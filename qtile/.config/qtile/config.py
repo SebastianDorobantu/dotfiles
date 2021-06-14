@@ -52,7 +52,7 @@ keys = [
     Key([mod], "f", lazy.spawncmd(),desc="Spawn a command using a prompt widget"),
     Key([mod], "Return",lazy.spawn('rofi -show drun'),desc='Run Launcher'),
     Key([], "Print", lazy.spawn("deepin-screenshot")),
-    Key([mod], "w",lazy.spawn('alacritty -e nvim /home/seba/Dropbox/wiki/index.md' ),desc='Start vimwiki')
+    Key([mod], "w",lazy.spawn('alacritty -e nvim /home/seba/MEGA/wiki/index.md' ),desc='Start vimwiki')
     ]
 
 # Drag floating layouts.
@@ -115,11 +115,12 @@ screens = [
                     name_transform=lambda name: name.upper()
                             ),
                 #widget.CurrentLayoutIcon(scale=0.7),
-                #widget.Systray(),
                 #widget.Memory()
                 widget.Clock(format='%I:%M:%S %p',
                             ),
-                widget.Spacer(797),
+                widget.Spacer(770),
+                widget.Systray(),
+                widget.Spacer(20),
                 widget.Clock(format='%A %d %b'),
                 widget.Spacer(7),
             ],
@@ -150,6 +151,7 @@ floating_layout = layout.Floating(float_rules=[
 
     #Defined by me
     Match(wm_class='PacketTracer'),  # PacketTracer
+    Match(wm_class='megasync'),  # PacketTracer
     Match(wm_class='VirtualBox Manager'),  # VirtualBox
     Match(wm_class='VirtualBox Machine'),  # VirtualBox
 

@@ -53,7 +53,7 @@ let g:Hexokinase_optInPatterns = 'full_hex,rgb,rgba,hsl,hsla'
 
 "#######################-For Makeing VimWiki Work-##################################
 
-let g:vimwiki_list = [{'path': '/home/seba/Dropbox/wiki'}] " set path to a directory inside Dropbox
+let g:vimwiki_list = [{'path': '/home/seba/MEGA/wiki'}] " set path to a directory inside Dropbox
 let g:vimwiki_ext = '.md' " set extension to .md
 let g:vimwiki_global_ext = 0 " make sure vimwiki doesn't own all .md files
 let g:vimwiki_folding = ''

@@ -73,7 +73,7 @@ plugins=(
     )
 
 fpath+=${ZDOTDIR:-~}/.zsh_functions
-autoload -U compinit && compinit
+#autoload -U compinit && compinit
 source $ZSH/oh-my-zsh.sh
 ###########User configuration###################################################
 
@@ -173,7 +173,7 @@ alias zoinks='sudo pacman -Syyyu'
 alias unlock='sudo rm /var/lib/pacman/db.lck'    # remove pacman lock
 
 # Shortcuts
-alias 3mon='xrandr --output HDMI-1 --auto;xrandr --output HDMI-1 --same-as HDMI-0'
+alias 3mon='xrandr --output HDMI-1 --auto --same-as HDMI-0'
 alias ww='nvim $DROPBOX/wiki/index.md'
 
 
