@@ -142,5 +142,4 @@ map <Leader>R call RunFile()
 nnoremap <leader>f gqip
 
 
-" Open terminal here
-nmap <Leader>R :split<CR><c-w>j:term<CR>i<c-l><CR><c-l>python
+nmap <Leader>t :split<CR><c-w>j:term <CR>i
