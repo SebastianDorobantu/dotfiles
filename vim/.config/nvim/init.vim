@@ -142,4 +142,20 @@ map <Leader>R call RunFile()
 nnoremap <leader>f gqip
 
 
-nmap <Leader>t :split<CR><c-w>j:term <CR>i
+"Open terminal
+nmap <Leader>t :split<CR><c-w>j:term <CR>i<c-l>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

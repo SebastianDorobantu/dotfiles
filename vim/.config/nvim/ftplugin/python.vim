@@ -23,5 +23,5 @@ endfunction
 setlocal includeexpr=PyInclude(v:fname)
 setlocal define=^\\s*\\<\\(def\\\|class\\)\\>
 
-" Open terminal here
+" Run code
 nmap <Leader>R :split<CR><c-w>j:term python %<CR>i
