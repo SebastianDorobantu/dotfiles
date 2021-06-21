@@ -11,6 +11,7 @@ syntax on
 set exrc
 set hidden
 set expandtab
+set autochdir
 set autoindent
 set smartindent
 set scrolloff=12
@@ -135,6 +136,11 @@ nmap <Leader>vw <Plug>VimwikiIndex
 " Lead ww opens vimwiki in split
 map <Leader>ww :vsplit<Enter><C-w>l<Plug>VimwikiIndex:vertical resize -18<Enter>
 
+map <Leader>R call RunFile()
 
 " Format text according to textwidth
 nnoremap <leader>f gqip
+
+
+" Open terminal here
+nmap <Leader>R :split<CR><c-w>j:term<CR>i<c-l><CR><c-l>python
