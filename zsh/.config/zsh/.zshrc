@@ -151,6 +151,8 @@ alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias journalctl='journalctl --no-hostname'
 alias cat='bat'
+alias free='free -h'
+alias vnc='x11vnc -create -rfbauth .vnc/passwd'
 
 # The terminal rickroll
 alias rr='curl -s -L https://raw.githubusercontent.com/keroserene/rickrollrc/master/roll.sh | bash'
@@ -211,3 +213,6 @@ ex ()
 ######START#####################################################################
 
 neofetch
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"

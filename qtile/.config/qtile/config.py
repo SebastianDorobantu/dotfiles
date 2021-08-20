@@ -67,7 +67,7 @@ mouse = [
 
 
 #Group Creation#################################################################
-group_names=['WEB','VIM','SOUND','ETC']
+group_names=['WEB','TERM','VIM','SOUND','GAME','ETC']
 
 groups = [Group(name) for name in group_names]
 
@@ -118,11 +118,106 @@ screens = [
                 #widget.Memory()
                 widget.Clock(format='%I:%M:%S %p',
                             ),
-                widget.Spacer(770),
-                widget.Systray(),
-                widget.Spacer(20),
+                #widget.Spacer(476),
+
+
+                # DE AICI IS CONFIGURI FURATE DE LA PAUL
+                widget.TextBox(
+                    text="",
+                    background="#37323F",
+                    foreground="#5317AC",
+                    padding=-44,
+                    fontsize=231
+                    ),
+                widget.TextBox(
+                text = " ",
+                padding = 2,
+                background="#5317AC",
+                foreground="#ffffff",
+                fontsize="20"
+                                                                                                               ),
+
+                widget.CheckUpdates(
+                    update_interval= 30,
+                    distro='Arch',
+                    display_format="{updates} Updates",
+                    foreground="#ffffff",
+                    no_update_string="N/A",
+                    mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(terminal + 'sudo pacman -Syu')},
+                    background="#5317AC",
+                    padding=5,
+                    ),
+
+                widget.TextBox(
+                    text="",
+                    background="#5317AC",
+                    foreground="#37323F",
+                    padding=-44,
+                    fontsize=231
+                    ),
+
+                widget.TextBox(
+                    text="",
+                    background="#37323F",
+                    foreground="#5317AC",
+                    padding=-44,
+                    fontsize=231
+                    ),
+                widget.OpenWeather(
+                    location="Timisoara",
+                    foreground="#ffffff",
+                    background="#5317AC",
+                    format='{location_city}: {main_temp} °{units_temperature}',
+                    update_interval=60
+                    ),
+                widget.TextBox(
+                    text="",
+                    background="#5317AC",
+                    foreground="#37323F",
+                    padding=-44,
+                    fontsize=231
+                    ),
+
+                widget.CPU(
+                        format='CPU usage: {load_percent}%',
+                        background="#37323F",
+                        padding=5,
+                        foreground="#ffffff",
+                        ),
+                widget.Memory(
+                    foreground="#ffffff",
+                    format='RAM usage: {MemPercent: .0f}%',
+                    measure_mem="G",
+                    background="#37323F",
+                    padding=5
+                    ),
+
+
+                widget.TextBox(
+                    text="",
+                    background="#37323F",
+                    foreground="#5317AC",
+                    padding=-44,
+                    fontsize=231
+                    ),
+                widget.TextBox(
+                    text="",
+                    background="#5317AC",
+                    foreground="#37323F",
+                    padding=-44,
+                    fontsize=231
+                    ),
+
+
+                # PANA AICI IS CONFIGURI FURATE DE LA PAUL
                 widget.Clock(format='%A %d %b'),
-                widget.Spacer(7),
+                widget.Systray(
+                                padding=10,
+                        ),
+                widget.Spacer(10),
+
+
+
             ],
                       34, #size
                       background="#37323F",
@@ -152,6 +247,7 @@ floating_layout = layout.Floating(float_rules=[
     #Defined by me
     Match(wm_class='PacketTracer'),  # PacketTracer
     Match(wm_class='megasync'),  # PacketTracer
+    Match(wm_class='roxterm'),  # Gns3 Terminal
     Match(wm_class='VirtualBox Manager'),  # VirtualBox
     Match(wm_class='VirtualBox Machine'),  # VirtualBox
 

@@ -1,0 +1,30 @@
+gcloud config set project gns3-server-gcp
+
+gcloud init
+
+gcloud compute firewall-rules create gns3 --action=ALLOW --rules=tcp:3080
+
+cd /tmp
+curl https://raw.githubusercontent.com/GNS3/gns3-server/master/scripts/remote-install.sh > gns3-remote-install.sh
+sudo bash gns3-remote-install.sh --with-iou --with-i386-repository
+
+gcloud compute images create nested-ubuntu-bionic --source-image-family=ubuntu-1804-lts --source-image-project=ubuntu-os-cloud --licenses https://www.googleapis.com/compute/v1/projects/vm-options/global/licenses/enable-vmx
+
+
+gcloud compute disks create disk1 --image-project nested-ubuntu-bionic --image-family ubuntu-1804-lts --zone us-east4-a
+
+
+gcloud compute images create kvm-image \
+  --source-disk disk1 --source-disk-zone zone us-east4-a \
+  --licenses "https://www.googleapis.com/compute/v1/projects/vm-options/global/licenses/enable-vmx"
+gcloud compute instances create gns3server --zone europe-west2-b \
+              --min-cpu-platform "Intel Skylake" --machine-type=n1-standard-8 \
+              --boot-disk-size=30GB --boot-disk-type=pd-ssd \
+              --tags http-server,https-server \
+              --image kvm-image                                                                                                                                                                                           
+			  
+Asta il bagi dupa ce ai serverul provizionat!
+Deschizi o sesiune de ssh si din server dai aceasta comanda!
+cd /tmp
+curl https://raw.githubusercontent.com/GNS3/gns3-server/master/scripts/remote-install.sh > gns3-remote-install.sh
+sudo bash gns3-remote-install.sh --with-iou --with-i386-repository
