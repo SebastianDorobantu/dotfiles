@@ -1,0 +1,4 @@
+WARN  2021-10-04T22:18:58.308 650   deadly_signal:162: got signal 15 (SIGTERM)
+WARN  2021-10-06T19:59:13.404 713   deadly_signal:162: got signal 1 (SIGHUP)
+WARN  2021-10-06T20:07:39.026 3382  deadly_signal:162: got signal 1 (SIGHUP)
+WARN  2021-10-06T20:07:56.928 3761  deadly_signal:162: got signal 1 (SIGHUP)
