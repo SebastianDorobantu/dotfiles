@@ -41,12 +41,14 @@ fi
 
 [[ -f ~/.config/X11/.Xresources ]] && xrdb -merge -I$HOME ~/.config/X11/.Xresources
 
+xrandr --output DVI-D-0 --off --output HDMI-1 --mode 1920x1080 --pos 2368x280 --rotate normal --output HDMI-0 --same-as HDMI-1 --output DP-0 --mode 1360x768 --pos 1600x0 --rotate right --output DP-1 --off --output DP-2 --mode 1600x900 --pos 0x230 --rotate normal --output DP-3 --off
 autokey-gtk &
-numlockx &
-nitrogen --restore &
 picom &
 megasync &
-xrandr --output DVI-D-0 --off --output HDMI-0 --mode 1920x1080 --pos 768x140 --rotate normal --output HDMI-1 --auto --same-as HDMI-0 --output DP-0 --off --output DP-1 --off --output DP-2 --mode 1360x768 --pos 0x0 --rotate right --output DP-3 --off
+xset -dpms & # Disables Energy Star features
+xset s off & # Disables screen saver
+nitrogen --restore &
 
-exec qtile
+
+exec qtile start
 

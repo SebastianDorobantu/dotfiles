@@ -50,9 +50,9 @@ keys = [
     # Spawns###############################################
     Key([mod], "r", lazy.spawn(terminal), desc="Launch terminal"),
     Key([mod], "f", lazy.spawncmd(),desc="Spawn a command using a prompt widget"),
-    Key([mod], "Return",lazy.spawn('rofi -show drun'),desc='Run Launcher'),
+    Key([mod], "Return",lazy.spawn('rofi -show drun -show-icons'),desc='Run Launcher'),
     Key([], "Print", lazy.spawn("deepin-screenshot")),
-    Key([mod], "w",lazy.spawn('alacritty -e nvim /home/seba/MEGA/wiki/index.md' ),desc='Start vimwiki')
+    Key([mod], "w", lazy.spawn("alacritty -e nvim /home/seba/MEGA/wiki/index.md"))
     ]
 
 # Drag floating layouts.
@@ -66,24 +66,40 @@ mouse = [
 
 
 
-#Group Creation#################################################################
-group_names=['WEB','TERM','VIM','SOUND','GAME','ETC']
+#Group Creation###############################################################
 
-groups = [Group(name) for name in group_names]
+groups=[]
 
-for i,name in enumerate(group_names, 1):
-    keys.append(Key([mod], str(i), lazy.group[name].toscreen()))
-    keys.append(Key([mod, "shift"], str(i), lazy.window.togroup(name)))
+group_names=['WEB', 'TERM', 'VIM', 'PHOTO', 'FILES', 'CHAT', 'SOUND', 'ETC']
+group_layouts = ["columns", "verticaltile", "verticaltile", "verticaltile", "columns", "columns", "columns", "columns", "columns", "columns"]
+group_labels = ["", "", "", "", "", "", "", ""]
+
+
+
+for i,nume in enumerate(group_names, 0):
+    keys.append(Key([mod], str(i+1), lazy.group[nume].toscreen()))
+    keys.append(Key([mod, "shift"], str(i+1), lazy.window.togroup(nume)))
+    groups.append(
+            Group(
+                name=group_names[i],
+                layout=group_layouts[i],
+                label=group_labels[i]
+                ))
 
 
 
 #Layouts########################################################################
 layouts = [
-    layout.Columns(border_focus="#7D15FF",
+    layout.Columns(
+        border_focus="#7D15FF",
         border_normal='#312E79',
         margin=6,
-        margin_on_single=4),
+        margin_on_single=2),
     layout.MonadTall(broder_focus="#7800FF",margin=5 ),
+    layout.VerticalTile(
+        border_focus="#7D15FF",
+        border_normal='#312E79',
+        margin=6  ) ,
     layout.RatioTile(),
     layout.Tile()
 ]
@@ -101,14 +117,21 @@ screens = [
             [   widget.Spacer(4),
                 widget.GroupBox(inactive='#FFFFFF' ,
                                 foreground='#03FF00',
-                                active='#A28943',
-                                highlight_method='block' ,
-                                this_current_screen_border='#5317AC',
-                                block_highlight_text_color='#344FAC'
+                                active='#9045ff',
+                                highlight_method='line' ,
+                                disable_drag='True',
+                                fontsize=30,
+                                this_current_screen_border='#9045ff',
+                                other_current_screen_border='#9045ff',
+                                this_screen_border='#c700c7',
+                                other_screen_border='#c700c7',
+                                block_highlight_text_color='#FFFFFF'
                                ),
 
                 widget.Prompt(),
-                widget.WindowName(),
+                widget.WindowName(
+                    font="Ubuntu Mono Bold"
+                                 ),
                 widget.Chord(
                     chords_colors={
                         'launch': ("#ff0000", "#ffffff") },
@@ -116,75 +139,58 @@ screens = [
                             ),
                 #widget.CurrentLayoutIcon(scale=0.7),
                 #widget.Memory()
-                widget.Clock(format='%I:%M:%S %p',
+                widget.Clock(
+                    format='%I:%M:%S %p',
+                    font="Ubuntu Mono Bold",
+                    fontsize=17
                             ),
-                #widget.Spacer(476),
+                widget.Spacer(60),
 
 
                 # DE AICI IS CONFIGURI FURATE DE LA PAUL
                 widget.TextBox(
                     text="",
                     background="#37323F",
-                    foreground="#5317AC",
+                    foreground="#9045ff",
                     padding=-44,
                     fontsize=231
                     ),
                 widget.TextBox(
-                text = " ",
+                text = "",
                 padding = 2,
-                background="#5317AC",
+                background="#9045ff",
                 foreground="#ffffff",
                 fontsize="20"
-                                                                                                               ),
+                              ),
 
-                widget.CheckUpdates(
-                    update_interval= 30,
-                    distro='Arch',
-                    display_format="{updates} Updates",
-                    foreground="#ffffff",
-                    no_update_string="N/A",
-                    mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(terminal + 'sudo pacman -Syu')},
-                    background="#5317AC",
-                    padding=5,
-                    ),
-
-                widget.TextBox(
-                    text="",
-                    background="#5317AC",
-                    foreground="#37323F",
-                    padding=-44,
-                    fontsize=231
-                    ),
-
-                widget.TextBox(
-                    text="",
-                    background="#37323F",
-                    foreground="#5317AC",
-                    padding=-44,
-                    fontsize=231
-                    ),
                 widget.OpenWeather(
+                    font="Ubuntu Mono Bold",
+                    fontsize=17,
                     location="Timisoara",
                     foreground="#ffffff",
-                    background="#5317AC",
+                    background="#9045ff",
                     format='{location_city}: {main_temp} °{units_temperature}',
                     update_interval=60
                     ),
                 widget.TextBox(
                     text="",
-                    background="#5317AC",
+                    background="#9045ff",
                     foreground="#37323F",
                     padding=-44,
                     fontsize=231
                     ),
 
                 widget.CPU(
+                        font="Ubuntu Mono Bold",
+                    fontsize=17,
                         format='CPU usage: {load_percent}%',
                         background="#37323F",
                         padding=5,
                         foreground="#ffffff",
                         ),
                 widget.Memory(
+                    font="Ubuntu Mono Bold",
+                    fontsize=17,
                     foreground="#ffffff",
                     format='RAM usage: {MemPercent: .0f}%',
                     measure_mem="G",
@@ -196,13 +202,13 @@ screens = [
                 widget.TextBox(
                     text="",
                     background="#37323F",
-                    foreground="#5317AC",
+                    foreground="#9045ff",
                     padding=-44,
                     fontsize=231
                     ),
                 widget.TextBox(
                     text="",
-                    background="#5317AC",
+                    background="#9045ff",
                     foreground="#37323F",
                     padding=-44,
                     fontsize=231
@@ -210,7 +216,10 @@ screens = [
 
 
                 # PANA AICI IS CONFIGURI FURATE DE LA PAUL
-                widget.Clock(format='%A %d %b'),
+                widget.Clock(
+                        font="Ubuntu Mono Bold",
+                    fontsize=17,
+                        format='%A %d %b'),
                 widget.Systray(
                                 padding=10,
                         ),

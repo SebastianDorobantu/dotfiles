@@ -1,4 +1,4 @@
-export PATH=$PATH:/usr/local/go/bin:/home/seba/.local/bin:/home/seba/Project/conf/Scripts
+export PATH=$PATH:/usr/local/go/bin:/home/seba/.local/bin:/home/seba/Project/Configz/Scripts
 
 export EDITOR="nvim"
 export TERMINAL="Alacritty"
@@ -17,7 +17,7 @@ export SAVEHIST=500000
 export HISTFILE="$HOME/.config/zsh/history"
 export ZDOTDIR=~/.config/zsh
 export ZSH_DISABLE_COMPFIX='true'
-export XAUTHORITY="$XDG_RUNTIME_DIR"/Xauhority
+export XAUTHORITY="$XDG_CONFIG_HOME"/Xauthority
 export GNUPHOME="$XDG_DATA_HOME"/gnupg
 export LESSHISTFILE=-
 export XINITRC="$XDG_CONFIG_HOME"/X11/xinitrc
